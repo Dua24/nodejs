@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const viewEngines = require("./config/viewEngines")
-const webRoutes = require('./routes/web')
+// const webRoutes = require('./routes/web')
 const apiRoutes = require('./routes/api')
 const connection = require('./config/database')
 const fileUpload = require('express-fileupload');
@@ -27,7 +27,6 @@ viewEngines(app);
 (async () => {
   try {
     await connection()
-    app.use('/', webRoutes)
     app.use('/v1/api/', apiRoutes)
     app.listen(port_backend, hostname, () => {
       console.log(`Example app listening on address ${hostname} port ${port_backend}`)

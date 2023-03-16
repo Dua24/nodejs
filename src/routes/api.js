@@ -6,9 +6,18 @@ const { postNewCustomerApi, postNewManyCustomerApi
     deleteMultiCustomer
 } = require('../controllers/apiCustomer')
 
+const { getAllQuizz, postAQuizz } = require('../controllers/apiQuizz')
+
 router.get('/', (req, res) => {
     res.send("Route with api")
 })
+
+router.get('/quizz', getAllQuizz)
+router.post('/quizz', postAQuizz)
+//
+
+
+
 
 router.get('/users', getHomepageApi)
 router.post('/users', postNewUserApi)
@@ -24,6 +33,9 @@ router.post('/customers-many', postNewManyCustomerApi)
 router.put('/customers', putUpdateCustomerApi)
 router.delete('/customers', deleteCustomer)
 router.delete('/customers-many', deleteMultiCustomer)
+
+
+
 
 
 module.exports = router
