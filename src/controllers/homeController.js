@@ -23,8 +23,6 @@ const postNewUser = async (req, res) => {
     // console.log(rows); // results contains rows returned by server
     User.create({ name, email, city })
     res.redirect('/')
-
-
 }
 const getPageCreate = (req, res) => {
     res.render('create.ejs')
